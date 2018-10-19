@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			var dog = {
+				name: "小黄",
+				sex: "boy",
+				eag: 5,
+				color: "yellow",
+
+				color: function(color) {
+					console.log(this.name + "身上的颜色是" + color);
+				},
+				eat: function(food) {
+					console.log(this.name + "喜欢吃" + food);
+
+				},
+				run: function(run) {
+					console.log(this.name + "喜欢" + run);
+				},
+
+				str: function(str) {
+					console.log(this.name + "喜欢" + str);
+				}
+			}
+
+			//ibject面向对象
+
+			var cat = new Object();
+			cat.name = "hello kitty";
+			cat.set = "boy";
+			cat.eag = 12;
+
+			cat.eat = function(food) {
+				console.log(cat.name + "喜欢吃" + food);
+			};
+
+			console.log(cat.name);
+			cat.eat("海鲜");
+
+			function preson(name, sex, eag) {
+				var obj = {
+					name: name,
+					sex: sex,
+					eag: eag,
+
+					eat: function(food) {
+						console.log(obj.name + "喜欢吃" + food + "，今年" + obj.eag + "岁" + "，是个" + obj.sex);
+					},
+
+					run: function() {
+						console.log(obj.name + "喜欢" + run);
+					},
+					say: function(str) {
+						console.log(obj.name + "说" + str);
+					},
+				}
+				return obj;
+			}
+
+			var xiaoming = preson("小明", "boy", "12");
+			var xiaohua = preson("小花", "gial", "12");
+			xiaoming.eat("橘子");
+			xiaoming.say("喜欢小花");
+			
+			
+			//构造函数的创建方式
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

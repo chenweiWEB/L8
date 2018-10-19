@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			// 1. 对象直接量
+			var dog = {
+				// 属性
+				name: "大黄",
+				sex: "boy",
+				age: 5,
+				color: 'yellow',
+
+				// 方法
+				eat: function(food) {
+					console.log(this.name + "喜欢吃" + food);
+				},
+				run: function() {
+					console.log(this.name + "正在跑向你");
+				},
+				say: function(str) {
+					console.log(this.name + "说:" + str)
+				}
+			};
+
+			// 2.object实例
+			var cat = new Object(); // new Object 等效于  {}
+			// 属性
+			cat.name = "hello kitty";
+			cat.age = 2;
+			// 方法
+			cat.eat = function(food) {
+				console.log(this.name + "喜欢吃" + food);
+			}
+			console.log(cat.name);
+			cat.eat("小鱼干");
+
+			// 3.工厂模式
+			function person(name, age, sex) {
+				var obj = {};
+				obj.name = name;
+				obj.age = age;
+				obj.sex = sex;
+
+				obj.eat = function(food) {
+					console.log(obj.name + "喜欢吃" + food);
+				}
+
+				obj.say = function(str) {
+					console.log(obj.name + "说" + str);
+				}
+				return obj;
+			}
+
+			var xiaoming = person("小明", 12, 'boy');
+			var xiaohua = person("小华", 12, 'boy');
+			var xiaoliang = person("小亮", 12, 'boy');
+			
+			console.log(xiaoming);
+			xiaoming.eat("苹果");
+			xiaohua.eat("苹果");
+			xiaoliang.eat("苹果");
+
+			// 构造函数方式创建
+			function human(name, age, sex) {
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+
+				this.say = function(str) {
+					console.log(this.name + "说" + str);
+				}
+
+				this.eat = function(food) {
+					console.log(this.name + "喜欢吃" + food);
+				}
+			}
+			
+			// new 叫做实例化
+			var xiaohong = new human("小红",12,'girl');
+			console.log(xiaohong.name);
+			console.log(xiaohong.age);
+			console.log(xiaohong.sex);
+			xiaohong.say("大家好！");
+			xiaohong.eat("香蕉");
+			
+			console.log(xiaohong)
+			
+			
+		</script>
+	</body>
+
+</html>
